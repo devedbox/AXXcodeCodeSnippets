@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>UICollectionView flow layout</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - AXCollectionView Definition
+
+#define kAXCollectionViewItemLayoutCount &lt;#item count per line#&gt;
+#define kAXCollectionViewItemTopEdge &lt;#item top edge#&gt;
+#define kAXCollectionViewItemLeftEdge &lt;#item left edge#&gt;
+#define kAXCollectionViewItemBottomEdge &lt;#item bottom edge#&gt;
+#define kAXCollectionViewItemRightEdge &lt;#item right edge#&gt;
+#define kAXCollectionViewInset (UIEdgeInsetsMake(kAXCollectionViewItemTopEdge, kAXCollectionViewItemLeftEdge, kAXCollectionViewItemBottomEdge, kAXCollectionViewItemRightEdge))
+#define kAXCollectionViewItemMinimumLineSpacing &lt;#item minimum line spacing#&gt;
+#define kAXCollectionViewItemMinimumInteritemSpacing &lt;#item minimum interitem spacing#&gt;
+
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return &lt;#number of sections#&gt;;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return &lt;#number of items in section#&gt;;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    &lt;#UICollectionViewCell#&gt; *cell = [collectionView dequeueReusableCellWithReuseIdentifier:&lt;#(nonnull NSString *)#&gt; forIndexPath:indexPath];
+    return cell;
+}
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    &lt;#statements#&gt;;
+}
+#pragma mark - UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat size = 0.0;
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)collectionViewLayout;
+    if (layout.scrollDirection == UICollectionViewScrollDirectionVertical) {
+        size = (CGRectGetWidth(collectionView.bounds) - (kAXCollectionViewItemMinimumInteritemSpacing*(kAXCollectionViewItemLayoutCount-1)+kAXCollectionViewItemLeftEdge+kAXCollectionViewItemRightEdge))/kAXCollectionViewItemLayoutCount;
+    } else {
+        size = (CGRectGetHeight(collectionView.bounds) - (kAXCollectionViewItemMinimumInteritemSpacing*(kAXCollectionViewItemLayoutCount-1)+kAXCollectionViewItemTopEdge+kAXCollectionViewItemBottomEdge))/kAXCollectionViewItemLayoutCount;
+    }
+    return CGSizeMake(size, size);
+}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return kAXCollectionViewInset;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return kAXCollectionViewItemMinimumLineSpacing;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return kAXCollectionViewItemMinimumInteritemSpacing;
+}
+#pragma mark - AXCollectionViewDelegate
+- (void)collectionViewRefreshData:(AXCollectionView *)collectionView
+{
+    &lt;#data refresh statement#&gt;
+}
+- (void)collectionViewMoreData:(AXCollectionView *)collectionView
+{
+    &lt;#data more statement#&gt;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>17C063DC-327E-453E-8E52-291ECF8C7806</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Flow layout implementation of UIColloection view</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AX_UICollectionView flow layout implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
