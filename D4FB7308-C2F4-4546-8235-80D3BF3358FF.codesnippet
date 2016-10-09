@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>DELETE</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// Create a request.
+AXHTTPClientRequest *request = AXHTTPClientUnstoredRequest(&lt;#Request URL#&gt;, &lt;#Request Parameters#&gt;);
+// Show a processing hud view.
+[kAXPracticalHUD showSimpleInView:self.navigationController.view text:&lt;#Title text#&gt; detail:&lt;#Detail text#&gt; configuration:AXPracticalHUDBreachedLockBackground()];
+// Do requests.
+[kESHTTPClient DELETE:request completion:^(AXHTTPClientResponse * _Nullable response, __kindof NSError * _Nullable error, NSDictionary * _Nonnull userInfo) {
+    NSTimeInterval duration = [userInfo[AXHTTPCompletionUserInfoDurationKey] doubleValue];
+    if (error) {// Show error hud view after grace time if error occured.
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kHUDGraceTimeinternal * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [kAXPracticalHUD showErrorInView:self.view.window text:error.localizedDescription detail:nil configuration:AXPracticalHUDLockBackground()];
+            [kAXPracticalHUD hide:YES afterDelay:kAXHudViewMinShowTimeinternal completion:NULL];
+        });
+    } else {// Show success hud view after grace time if none error.
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kHUDGraceTimeinternal * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [kAXPracticalHUD showSuccessInView:self.view.window text:&lt;#Success info#&gt; detail:nil configuration:AXPracticalHUDLockBackground()];
+            [kAXPracticalHUD hide:YES afterDelay:kAXHudViewMinShowTimeinternal completion:^{
+                // Do something after showing success hud view.
+                &lt;#Success things#&gt;
+            }];
+        });
+    }
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D4FB7308-C2F4-4546-8235-80D3BF3358FF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>DELETE request</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AX_HTTPClient_DELETE</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

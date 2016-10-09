@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSURLSessionTask *task = &lt;#task#&gt;;
+    if (task &amp;&amp; (task.state == NSURLSessionTaskStateRunning || task.state == NSURLSessionTaskStateSuspended)) {
+        [task cancel];
+    }
+    objc_setAssociatedObject(self, @selector(&lt;#selector#&gt;), [self DELETE:@"&lt;#URL#&gt;" parameters:nil completion:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject, AXError * _Nullable error, NSDictionary * _Nonnull userInfo) {
+        if (error) {
+            if (completion) {
+                completion(&lt;#params#&gt;);
+            }
+        } else {
+            MFResponseObject *response = [[MFResponseObject alloc] initWithValue:responseObject];
+            if (response.statusCode == AXHTTPClientStatusCodeSuccess) {
+                NSMutableDictionary *_userInfo = [userInfo mutableCopy];
+                [_userInfo setObject:@"&lt;#Success message#&gt;" forKey:kAXHTTPCompletionUserInfoStatusInfoKey];
+                if (completion) {
+                    completion(&lt;#params#&gt;);
+                }
+            } else {
+                NSMutableDictionary *_userInfo = [userInfo mutableCopy];
+                [_userInfo setObject:@"&lt;#Failure message#&gt;" forKey:kAXHTTPCompletionUserInfoStatusInfoKey];
+                if (completion) {
+                    completion(&lt;#params#&gt;);
+                }
+            }
+        }
+        objc_setAssociatedObject(self, @selector(&lt;#selector#&gt;), nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }], OBJC_ASSOCIATION_RETAIN_NONATOMIC);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4615103F-2C12-428D-A230-4443F5897974</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My Code Snippet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

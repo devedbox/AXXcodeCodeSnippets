@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Request methods</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>[kAXPracticalHUD showSimpleInView:self.view.window text:nil detail:nil configuration:Lock_Dim_backgroundBlock()];
+
+ NSTimeInterval duration = userInfo.duration;
+ if (error) {
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kHUDGraceTimeinternal * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         [kAXPracticalHUD showErrorInView:self.view.window text:error.localizedDescription detail:error.localizedRecoverySuggestion configuration:Lock_Dim_backgroundBlock()];
+         [kAXPracticalHUD hideAnimated:YES afterDelay:kAXHudViewMinShowTimeinternal completion:NULL];
+     });
+ } else {
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kHUDGraceTimeinternal * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         [kAXPracticalHUD showSuccessInView:self.view.window text:userInfo.message detail:nil configuration:Lock_Dim_backgroundBlock()];
+         [kAXPracticalHUD hideAnimated:YES afterDelay:kAXHudViewMinShowTimeinternal completion:^{
+         }];
+     });
+ }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3529ED56-F854-4593-A006-8A7F560317C3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>request methods</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AX_HTTPClient_Methods</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

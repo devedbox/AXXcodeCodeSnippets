@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>SDK_IF_ELSE_END</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#if __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= __IPHONE_&lt;#version#&gt;_&lt;#extension#&gt;
+    &lt;#statement#&gt;
+#else
+    &lt;#statement#&gt;
+#endif</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>745571A3-DB24-4A3A-9504-B8DE32127512</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>AX_SDK_VERSION_IF_ELSE_END</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AX_SDK_VERSION_IF_ELSE_END</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
