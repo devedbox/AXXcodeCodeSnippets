@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>AX_UIActionHandlerCheck</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>unsigned int count;
+        Ivar *ivar = class_copyIvarList(UIAlertAction.class, &amp;count);
+        Ivar handler;
+        for (int i = 0; i &lt; count; i++) {
+            const char *name = ivar_getName(ivar[i]);
+            // _handler
+            // _simpleHandler
+            if ([[NSString stringWithUTF8String:name] isEqualToString:@"_handler"]) {
+                handler = ivar[i];
+                break;
+            }
+        }
+        typedef void (^Handler)(UIAlertAction *_Nonnull action);
+        Handler handlerBlock = (Handler)object_getIvar(action, handler);
+        NSLog(@"%@", handlerBlock);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2F59F209-84B4-4F14-A85A-3C6CB5DE1C4C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>__NSMallocBlock</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AX_UIActionHandlerCheck</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

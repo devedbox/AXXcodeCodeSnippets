@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>AX_NSVerboseLog</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassInterfaceMethods</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#ifdef DEBUG
+    #if DEBUG
+        #ifndef NSVerboseLog
+        #define NSVerboseLog(format, ...)
+        #endif
+    #else
+        #ifndef NSVerboseLog
+        #define NSVerboseLog(format, ...) NSLog([@"%s%s-%d " stringByAppendingString:format], [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __PRETTY_FUNCTION__, __LINE__, __VA_ARGS__)
+        #endif
+    #endif
+#else
+    #ifndef NSVerboseLog
+    #define NSVerboseLog(format, ...) NSLog([@"%s%s-%d " stringByAppendingString:format], [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __PRETTY_FUNCTION__, __LINE__, __VA_ARGS__)
+    #endif
+#endif</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>32E77ED7-382C-43F0-845E-2BFB9EE848BE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSVerboseLog</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AX_NSVerboseLog</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

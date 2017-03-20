@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>AXChainCombine</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>if ([self.animatorContext isEqualToString:kAXAnimatorContextSpring]) {
+            &lt;#Spring combinion#&gt;
+        } else {
+            &lt;#Basic combinion#&gt;
+        }
+        [self setAnimatorContext:kAXAnimatorContextNone];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>919B2A92-00FF-4133-A765-D81D9DBDE49D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Chain combine</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Chain combine</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
